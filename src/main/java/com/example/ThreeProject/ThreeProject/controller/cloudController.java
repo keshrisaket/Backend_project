@@ -14,6 +14,8 @@ public class cloudController  {
 
     cloudService cloudService;
 
+    cloudModal cloudModal;
+
 
     public cloudController(cloudService cloudService){
         this.cloudService=cloudService;
