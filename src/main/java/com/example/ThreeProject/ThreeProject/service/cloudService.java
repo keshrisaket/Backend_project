@@ -6,11 +6,15 @@ import java.util.List;
 
 public interface cloudService
 {
-    public String createCloud(cloudModal cloudModal);
-    public String deleteCloud(int cloudId);
-    public String updateCloud(cloudModal cloudModal);
-    public cloudModal getCloud(int cloudId);
-    public List<cloudModal> getAllCloud();
+     String createCloud(cloudModal cloudModal);
+     String deleteCloud(int cloudId);
+     String updateCloud(cloudModal cloudModal);
+     cloudModal getCloud(int cloudId);
+     List<cloudModal> getAllCloud();
 
 
 }
+
+
+
+

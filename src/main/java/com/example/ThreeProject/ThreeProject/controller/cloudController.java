@@ -8,7 +8,7 @@ import com.example.ThreeProject.ThreeProject.modal.cloudModal;
 import java.util.List;
 
 @RestController
-@RequestMapping({"/cloudService"})
+@RequestMapping("/cloudService")
 public class cloudController  {
 
 
@@ -27,24 +27,26 @@ public class cloudController  {
     }
 
 
+
+
     @GetMapping()
     public List<cloudModal> getAllCloud(){
         return cloudService.getAllCloud();
     }
 
     @PostMapping
-    public String createCloud(cloudModal cloudModal){
+    public String createCloud(@RequestBody  cloudModal cloudModal){
         return cloudService.createCloud(cloudModal);
     }
 
     @PutMapping
-    public String updateCloud(cloudModal cloudModal){
+    public String updateCloud(@RequestBody cloudModal cloudModal){
         return cloudService.updateCloud(cloudModal);
     }
 
 
-    @DeleteMapping
-    public String deleteMapping(int cloudId){
+    @DeleteMapping("/{cloudId}")
+    public String deleteMapping(@PathVariable("cloudId")int cloudId){
         return cloudService.deleteCloud(cloudId);
     }
 

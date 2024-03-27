@@ -3,10 +3,9 @@ package com.example.ThreeProject.ThreeProject.modal;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "cloud_info")
+@Table(name ="cloud_info")
 public class cloudModal {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  int cloudId;
     private String name;
     private String adress;
