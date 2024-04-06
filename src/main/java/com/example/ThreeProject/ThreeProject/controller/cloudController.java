@@ -32,12 +32,12 @@ public class cloudController  {
     }
 
     @PostMapping
-    public String createCloud(cloudModal cloudModal){
+    public String createCloud(@RequestBody  cloudModal cloudModal){
         return cloudService.createCloud(cloudModal);
     }
 
     @PutMapping
-    public String updateCloud(cloudModal cloudModal){
+    public String updateCloud(@RequestBody cloudModal cloudModal){
         return cloudService.updateCloud(cloudModal);
     }
 

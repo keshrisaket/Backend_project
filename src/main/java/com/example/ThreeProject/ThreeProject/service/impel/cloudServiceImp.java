@@ -1,5 +1,6 @@
 package com.example.ThreeProject.ThreeProject.service.impel;
 
+import com.example.ThreeProject.ThreeProject.exception.CloudVendorNotFoundException;
 import com.example.ThreeProject.ThreeProject.service.cloudService;
 import com.example.ThreeProject.ThreeProject.modal.cloudModal;
 import com.example.ThreeProject.ThreeProject.repositery.cloudRepositery;
@@ -34,11 +35,17 @@ public class cloudServiceImp implements cloudService {
  }
     @Override
  public cloudModal getCloud(int cloudId){
-     return cloudRepositery.findById(cloudId).get();
+
+        if (cloudRepositery.findById(cloudId).isEmpty()){
+            throw new CloudVendorNotFoundException("Cloud vendor id is not exist");
+        }
+
+        return cloudRepositery.findById(cloudId).get();
  }
     @Override
  public List<cloudModal> getAllCloud(){
-     return cloudRepositery.findAll();
+
+        return cloudRepositery.findAll();
  }
 
 
